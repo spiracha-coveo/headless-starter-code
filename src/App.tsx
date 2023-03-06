@@ -7,7 +7,6 @@ import {
   resultList as ResultListController
    } from './controllers/controllers';
 import { headlessEngine } from './Engine';
-
 function App() {
 
   useEffect(()=> headlessEngine.executeFirstSearch())
@@ -15,12 +14,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Coveo Headless Search Interface</h1>
+        <div className='App-title'>
+          <img src={require('./barca.svg').default} alt='mySvgImage' />
+        </div>
+        <div className="search-section">
+          <SearchBox controller={SearchBoxController}/>
+        </div>
       </header>
       <div className="App-body">
-        <div className="search-section">
-        <SearchBox controller={SearchBoxController}/>
-        </div>
         <div className="main-section">
           <div className="facet-section column">
             <h1>Facets go here</h1>

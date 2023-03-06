@@ -16,15 +16,14 @@ const SearchBox: React.FC<SearchBoxProps> = (props) => {
       [controller]
     );
     return (
-        <>
-            <div>
-                <input 
-                    value={state.value}
-                    onChange={(e) => controller.updateText(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && controller.submit()}
-                    />
-            </div>
-        </>
+        <div className='search-box'>
+            <input
+                placeholder='Search in Barca...'
+                value={state.value}
+                onChange={(e) => controller.updateText(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && controller.submit()}
+                />
+        </div>
     );
   };
 
