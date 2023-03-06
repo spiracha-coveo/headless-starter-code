@@ -11,7 +11,7 @@ import {
 import { headlessEngine } from './Engine';
 function App() {
 
-  useEffect(()=> headlessEngine.executeFirstSearch())
+  useEffect(()=> headlessEngine.executeFirstSearch()) // show results on initial page load
 
   return (
     <div className="app">
