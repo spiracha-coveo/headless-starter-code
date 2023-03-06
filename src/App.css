@@ -3,7 +3,7 @@
   font-style: normal;
 }
 
-.App-header {
+.app-header {
   background-color: #24389E;
   display: flex;
   gap:10px;
@@ -11,9 +11,6 @@
   align-items: center;
   height: 10vh;
 }
-
-/* .App-title {
-  /* background-color: antiquewhite; */
 
 .search-section {
   width: 40%;
@@ -23,7 +20,7 @@
   width:150px;
   padding:10px;
   min-width: 80%;
-  border-radius:10px;
+  border-radius:5px;
   border: none;
 }
 
@@ -39,7 +36,7 @@
 }
 
 .facet-section {
-  width: 25%;
+  width: 20%;
   padding: 10px;
 }
 
@@ -63,13 +60,4 @@
 
 .results-section {
   width: 50%;
-}
-
-
-.sort {
-  display: flex;
-}
-
-.sort p {
-  margin: 0;
 }

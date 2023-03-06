@@ -14,16 +14,14 @@ function App() {
   useEffect(()=> headlessEngine.executeFirstSearch())
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className='App-title'>
-          <img src={require('./barca.svg').default} alt='mySvgImage' />
-        </div>
+    <div className="app">
+      <header className="app-header">
+        <img src={require('./assets/barca.svg').default} alt='barcaLogo' />
         <div className="search-section">
           <SearchBox controller={SearchBoxController}/>
         </div>
       </header>
-      <div className="App-body">
+      <div className="app-body">
         <div className="main-section">
           <div className="facet-section column">
             <Facet controller={FacetController} title="Category" />
