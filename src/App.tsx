@@ -2,9 +2,11 @@ import { useEffect } from 'react';
 import './App.css';
 import ResultList from './components/ResultList';
 import SearchBox from './components/SearchBox';
+import Facet from './components/Facet';
 import { 
   searchBox as SearchBoxController,
-  resultList as ResultListController
+  resultList as ResultListController,
+  facet as FacetController
    } from './controllers/controllers';
 import { headlessEngine } from './Engine';
 function App() {
@@ -24,7 +26,7 @@ function App() {
       <div className="App-body">
         <div className="main-section">
           <div className="facet-section column">
-            <h1>Facets go here</h1>
+            <Facet controller={FacetController} title="Category" />
           </div>
           <div className="results-section column">
             <ResultList controller={ResultListController}/>

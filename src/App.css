@@ -1,3 +1,8 @@
+* {
+  font-family: Lexend;
+  font-style: normal;
+}
+
 .App-header {
   background-color: #24389E;
   display: flex;
@@ -35,15 +40,31 @@
 
 .facet-section {
   width: 25%;
+  padding: 10px;
+}
+
+.facet {
+  border: 2px solid #8dcce8;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+.facet h3 {
+  color: #24389E
+}
+
+.facet ul {
+  text-align: left;
+}
+
+.facet li:hover {
+  color: #1CEBCF
 }
 
 .results-section {
   width: 50%;
 }
 
-.facet ul {
-  text-align: left;
-}
 
 .sort {
   display: flex;
