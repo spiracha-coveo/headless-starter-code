@@ -14,9 +14,22 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <SearchBox controller={SearchBoxController}/>
-      <ResultList controller={ResultListController}/>
+      <header className="App-header">
+        <h1>Coveo Headless Search Interface</h1>
+      </header>
+      <div className="App-body">
+        <div className="search-section">
+        <SearchBox controller={SearchBoxController}/>
+        </div>
+        <div className="main-section">
+          <div className="facet-section column">
+            <h1>Facets go here</h1>
+          </div>
+          <div className="results-section column">
+            <ResultList controller={ResultListController}/>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
