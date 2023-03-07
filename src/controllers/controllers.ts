@@ -7,4 +7,4 @@ export const resultList = buildResultList(headlessEngine);
 
 export const facet = buildFacet(headlessEngine, {options: {field: 'ec_category'}});
 
-export const pager = buildPager(headlessEngine, {options: {numberOfPages: 3}})
+export const pager = buildPager(headlessEngine)
