@@ -1,6 +1,13 @@
+/* global css */
 * {
   font-family: Lexend;
   font-style: normal;
+}
+
+button {
+  border: none;
+  background: none;
+  font-size: 20px;
 }
 
 .app-header {
@@ -11,6 +18,14 @@
   align-items: center;
   height: 10vh;
 }
+
+.column {
+  float: left;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+
+/* search box component styling */
 
 .search-section {
   width: 40%;
@@ -29,11 +44,7 @@
   box-shadow: 0 0 0 2px;
 }
 
-.column {
-  float: left;
-  margin: auto;
-  padding-bottom: 1rem;
-}
+/* facet component styling */
 
 .facet-section {
   width: 20%;
@@ -57,6 +68,8 @@
 .facet li:hover {
   color: #1CEBCF
 }
+
+/* result list styling */
 
 .results-section {
   width: 50%;
