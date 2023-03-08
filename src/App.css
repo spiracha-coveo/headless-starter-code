@@ -98,6 +98,16 @@ button {
   cursor: pointer
 } 
 
+/* styling for pager component */
+
+/* styling for result list component */
+
+.result-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .result-button {
   position: relative;
   height: 40px;
@@ -135,9 +145,3 @@ button {
   opacity: 1;
   transition: 0s
 }
-
-.result-item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} 

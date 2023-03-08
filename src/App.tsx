@@ -10,7 +10,7 @@ import {
   facet as FacetController,
   pager as PagerController,
    } from './controllers/controllers';
-import { resultTemplatesManager } from './controllers/result-templates-manager';
+import { resultTemplatesManager } from './controllers/resultTemplatesManager';
 import { headlessEngine } from './Engine';
 function App() {
 
