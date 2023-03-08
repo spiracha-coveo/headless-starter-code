@@ -1,7 +1,9 @@
-import {SearchBox, buildSearchBox, buildResultList, buildFacet, buildPager} from '@coveo/headless'
+import {SearchBox, buildSearchBox, buildResultList, buildFacet, buildPager, buildInstantResults} from '@coveo/headless'
 import { headlessEngine } from '../Engine'
 
 export const searchBox: SearchBox = buildSearchBox(headlessEngine)
+
+export const instantResults = buildInstantResults( headlessEngine,{options: {maxResultsPerQuery: 5}});
 
 export const resultList = buildResultList(headlessEngine);
 
