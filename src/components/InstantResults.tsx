@@ -71,12 +71,10 @@ import {
           <div className='search-instant-results'>
             {instantResultsState.results.map((result) => {
             return (
-              <p>
-                <div>
-                  {result.title}: {result.raw.source}
-                </div>
-                <pre>{result.excerpt}</pre>
-              </p>
+              <>
+                <h3>{result.title}</h3>
+                <p>{result.excerpt}</p>
+              </>
             );
           })}
           </div>

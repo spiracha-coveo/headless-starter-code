@@ -78,6 +78,7 @@ button {
 
 .search-instant-results {
   width: 100%;
+  font-size: 15px;
   overflow: hidden;
   border-bottom: #e2e0db 2px solid;
   border-top: #e2e0db 2px solid;
