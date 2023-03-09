@@ -3,7 +3,7 @@ import { headlessEngine } from '../Engine'
 
 export const searchBox: SearchBox = buildSearchBox(headlessEngine)
 
-export const instantResults = buildInstantResults( headlessEngine,{options: {maxResultsPerQuery: 5}});
+export const instantResults = buildInstantResults( headlessEngine,{options: {maxResultsPerQuery: 1}});
 
 export const resultList = buildResultList(headlessEngine);
 

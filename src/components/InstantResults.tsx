@@ -9,7 +9,7 @@ import {
     controllerInstantResults: HeadlessInstantResults;
   }
    
-  export const InstantResults: FunctionComponent<InstantResultsProps> = (
+  export const InstantResults: React.FC<InstantResultsProps> = (
     props
   ) => {
     const {controllerSearchbox, controllerInstantResults} = props;
@@ -38,42 +38,51 @@ import {
     );
    
     return (
-      <div className='search-box'>
-   
+      
+      <div className="search-box">
         <input
           value={searchboxState.value}
           onChange={(e) => controllerSearchbox.updateText(e.target.value)}
-          onKeyDown={(e) => isEnterKey(e) && controllerSearchbox.submit()}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              controllerSearchbox.submit();
+            } else if (e.key === 'Escape') {
+              controllerSearchbox.clear();
+              (e.target as HTMLInputElement).blur();
+            }
+          }}
         />
-   
-        <div style={{display: 'flex'}}>
-          <ul>
+        <div className='search-results'>
+        {searchboxState.suggestions.length > 0 && (
+          <div className='search-queries'>
             {searchboxState.suggestions.map((suggestion) => {
-              const value = suggestion.rawValue;
               return (
-                <li
-                  key={value}
-                  onMouseEnter={() => controllerInstantResults.updateQuery(value)}
-                  onClick={() => controllerSearchbox.selectSuggestion(value)}
-                >
-                  {value}
-                </li>
+                <p
+                  key={suggestion.rawValue}
+                  onMouseEnter={() => controllerInstantResults.updateQuery(suggestion.rawValue)}
+                  onClick={() => controllerSearchbox.selectSuggestion(suggestion.rawValue)}
+                  dangerouslySetInnerHTML={{__html: suggestion.highlightedValue}}
+                ></p>
               );
             })}
-          </ul>
-          <ul>
+          </div>
+        )}
+        {instantResultsState.results.length > 0 && (
+          <div className='search-instant-results'>
             {instantResultsState.results.map((result) => {
-              return (
-                <li>
-                  <div>
-                    {result.title}: {result.raw.source}
-                  </div>
-                  <pre>{result.excerpt}</pre>
-                </li>
-              );
-            })}
-          </ul>
+            return (
+              <p>
+                <div>
+                  {result.title}: {result.raw.source}
+                </div>
+                <pre>{result.excerpt}</pre>
+              </p>
+            );
+          })}
+          </div>
+        )}        
         </div>
       </div>
+    
     );
   };

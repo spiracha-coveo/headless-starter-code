@@ -23,8 +23,8 @@ function App() {
       <header className="app-header">
         <img src={require('./assets/barca.svg').default} alt='barcaLogo' />
         <div className="search-section">
-          <SearchBox controller={SearchBoxController}/>
-          {/* <InstantResults controllerSearchbox={SearchBoxController} controllerInstantResults={InstantResultsController}  />; */}
+          {/* <SearchBox controller={SearchBoxController}/> */}
+          <InstantResults controllerSearchbox={SearchBoxController} controllerInstantResults={InstantResultsController} />
         </div>
       </header>
       <div className="app-body">
