@@ -188,3 +188,9 @@ button {
   opacity: 1;
   transition: 0s
 }
+
+/* styling for sort component */
+.sort-select {
+  padding: 10px; background:#85eee0; border:none;
+  border-radius: 3px;
+}

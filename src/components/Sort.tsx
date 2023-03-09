@@ -31,19 +31,19 @@ const Sort: React.FC<SortProps> = (props) => {
 
     return (
         <div className="sort">
-        <p>Sort by:&nbsp;</p>
-        <select
-            value={getCurrentCriterion()[0]}
-            onChange={(e) =>
-            controller.sortBy(getCriterionFromName(e.target.value)[1])
-            }
-        >
-            {props.criteria.map(([criterionName]) => (
-            <option key={criterionName} value={criterionName}>
-                {criterionName}
-            </option>
-            ))}
-        </select>
+            <p>Sort by:&nbsp;</p>
+            <select className='sort-select'
+                value={getCurrentCriterion()[0]}
+                onChange={(e) =>
+                controller.sortBy(getCriterionFromName(e.target.value)[1])
+                }
+            >
+                {props.criteria.map(([criterionName]) => (
+                <option key={criterionName} value={criterionName}>
+                    {criterionName}
+                </option>
+                ))}
+            </select>
         </div>
     );
 };
