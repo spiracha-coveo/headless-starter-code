@@ -17,39 +17,38 @@ const SearchBox: React.FC<SearchBoxProps> = (props) => {
       [controller]
     );
     return (
-      <>
-        <div className="search-box">
-          <input
-            value={state.value}
-            onChange={(e) => controller.updateText(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                controller.submit();
-              } else if (e.key === 'Escape') {
-                controller.clear();
-                (e.target as HTMLInputElement).blur();
-              }
-            }}
-            onFocus={() => setFocused(true)}
-            onBlur={() => setFocused(false)}
-          />
-        </div>
+      
+      <div className="search-box">
+        <input
+          value={state.value}
+          onChange={(e) => controller.updateText(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              controller.submit();
+            } else if (e.key === 'Escape') {
+              controller.clear();
+              (e.target as HTMLInputElement).blur();
+            }
+          }}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+        />
         {focused && state.suggestions.length > 0 && (
-          <ul className='search-queries'>
+          <div className='search-queries'>
             {state.suggestions.map((suggestion) => {
               return (
-                <li
+                <p
                   key={suggestion.rawValue}
                   onMouseDown={(e) => e.preventDefault()}
                   onClick={() => controller.selectSuggestion(suggestion.rawValue)}
                   dangerouslySetInnerHTML={{__html: suggestion.highlightedValue}}
-                ></li>
+                ></p>
               );
             })}
-          </ul>
+          </div>
         )}
-      
-      </>
+      </div>
+    
     );
   };
 

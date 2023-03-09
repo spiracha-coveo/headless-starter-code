@@ -41,9 +41,19 @@ button {
 
 .search-queries {
   position: absolute;
-  top: 40px;
-  background-color: blue;;
-  width: 40%;
+  top: 55px;
+  border: #e2e0db 2px solid;
+  background-color: white;
+  border-radius: 5px;
+  width: 510px;
+}
+
+.search-queries p {
+  margin: 0px;
+}
+
+.search-queries p:hover {
+  background-color: #FAF9F6;
 }
 
 .search-box input:focus {
