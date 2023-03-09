@@ -17,21 +17,23 @@ const SearchBox: React.FC<SearchBoxProps> = (props) => {
       [controller]
     );
     return (
-      <div className="search-box">
-        <input
-          value={state.value}
-          onChange={(e) => controller.updateText(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              controller.submit();
-            } else if (e.key === 'Escape') {
-              controller.clear();
-              (e.target as HTMLInputElement).blur();
-            }
-          }}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-        />
+      <>
+        <div className="search-box">
+          <input
+            value={state.value}
+            onChange={(e) => controller.updateText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                controller.submit();
+              } else if (e.key === 'Escape') {
+                controller.clear();
+                (e.target as HTMLInputElement).blur();
+              }
+            }}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+          />
+        </div>
         {focused && state.suggestions.length > 0 && (
           <ul className='search-queries'>
             {state.suggestions.map((suggestion) => {
@@ -46,7 +48,8 @@ const SearchBox: React.FC<SearchBoxProps> = (props) => {
             })}
           </ul>
         )}
-      </div>
+      
+      </>
     );
   };
 

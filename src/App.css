@@ -31,12 +31,19 @@ button {
   width: 40%;
 }
 
-.search-box input {
+.search-box input{
   width:150px;
   padding:10px;
   min-width: 80%;
   border-radius:5px;
   border: none;
+}
+
+.search-queries {
+  position: absolute;
+  top: 40px;
+  background-color: blue;;
+  width: 40%;
 }
 
 .search-box input:focus {
