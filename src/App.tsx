@@ -4,7 +4,6 @@ import ResultList from './components/ResultList';
 import SearchBox from './components/SearchBox';
 import Facet from './components/Facet';
 import Pager from './components/Pager'
-import { InstantResults } from './components/InstantResults';
 import { 
   searchBox as SearchBoxController,
   resultList as ResultListController,
@@ -24,7 +23,7 @@ function App() {
         <img src={require('./assets/barca.svg').default} alt='barcaLogo' />
         <div className="search-section">
           {/* <SearchBox controller={SearchBoxController}/> */}
-          <InstantResults controllerSearchbox={SearchBoxController} controllerInstantResults={InstantResultsController} />
+          <SearchBox controllerSearchbox={SearchBoxController} controllerInstantResults={InstantResultsController} />
         </div>
       </header>
       <div className="app-body">
