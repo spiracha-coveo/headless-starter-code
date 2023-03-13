@@ -8,7 +8,8 @@ import {SearchBox,
         buildRelevanceSortCriterion,
         buildDateSortCriterion,
         SortOrder,
-        buildSort
+        buildSort,
+        buildFieldSortCriterion
       } from '@coveo/headless';
 
 import { headlessEngine } from '../Engine'
@@ -26,8 +27,9 @@ export const pager = buildPager(headlessEngine)
 export const criteria: [string, SortCriterion][] = [
     ['Relevance', buildRelevanceSortCriterion()],
     ['Date (Ascending)', buildDateSortCriterion(SortOrder.Ascending)],
-    ['Date (Descending)', buildDateSortCriterion(SortOrder.Descending)],
-];
+    ['Size (Ascending)', buildFieldSortCriterion('size', SortOrder.Ascending)],
+  ];
+  
 
 const initialCriterion = criteria[0][1];
 export const sort = buildSort(headlessEngine, {
