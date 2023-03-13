@@ -11,10 +11,11 @@ import {
   resultList as ResultListController,
   categoryFacet as CategoryFacetController,
   colorFacet as ColorFacetController,
+  levelFacet as LevelFacetController,
   pager as PagerController,
   instantResults as InstantResultsController,
   sort as SortController,
-  criteria
+  criteria,
    } from './controllers/controllers';
 import { resultTemplatesManager } from './controllers/resultTemplatesManager';
 import { headlessEngine } from './Engine';
@@ -36,6 +37,7 @@ function App() {
           <div className="facet-section column">
             <Facet controller={CategoryFacetController} title="Category" />
             <Facet controller={ColorFacetController} title="Color" />
+            <Facet controller={LevelFacetController} title="Level" />
           </div>
           <div className="results-section column">
             <Sort controller={SortController} criteria={criteria} />
