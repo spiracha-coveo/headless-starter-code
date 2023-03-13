@@ -9,7 +9,8 @@ import { InstantResults } from './components/InstantResults';
 import { 
   searchBox as SearchBoxController,
   resultList as ResultListController,
-  facet as FacetController,
+  categoryFacet as CategoryFacetController,
+  colorFacet as ColorFacetController,
   pager as PagerController,
   instantResults as InstantResultsController,
   sort as SortController,
@@ -33,7 +34,8 @@ function App() {
       <div className="app-body">
         <div className="main-section">
           <div className="facet-section column">
-            <Facet controller={FacetController} title="Category" />
+            <Facet controller={CategoryFacetController} title="Category" />
+            <Facet controller={ColorFacetController} title="Color" />
           </div>
           <div className="results-section column">
             <Sort controller={SortController} criteria={criteria} />

@@ -19,7 +19,8 @@ export const instantResults = buildInstantResults( headlessEngine,{options: {max
 
 export const resultList = buildResultList(headlessEngine);
 
-export const facet = buildFacet(headlessEngine, {options: {field: 'ec_category'}});
+export const categoryFacet = buildFacet(headlessEngine, {options: {field: 'ec_category'}});
+export const colorFacet = buildFacet(headlessEngine, {options: {field: 'cat_color'}});
 
 export const pager = buildPager(headlessEngine)
 
