@@ -9,11 +9,13 @@ import { InstantResults } from './components/InstantResults';
 import { 
   searchBox as SearchBoxController,
   resultList as ResultListController,
-  facet as FacetController,
+  categoryFacet as CategoryFacetController,
+  colorFacet as ColorFacetController,
+  levelFacet as LevelFacetController,
   pager as PagerController,
   instantResults as InstantResultsController,
   sort as SortController,
-  criteria
+  criteria,
    } from './controllers/controllers';
 import { resultTemplatesManager } from './controllers/resultTemplatesManager';
 import { headlessEngine } from './Engine';
@@ -33,7 +35,9 @@ function App() {
       <div className="app-body">
         <div className="main-section">
           <div className="facet-section column">
-            <Facet controller={FacetController} title="Category" />
+            <Facet controller={CategoryFacetController} title="Category" />
+            <Facet controller={ColorFacetController} title="Color" />
+            <Facet controller={LevelFacetController} title="Level" />
           </div>
           <div className="results-section column">
             <Sort controller={SortController} criteria={criteria} />

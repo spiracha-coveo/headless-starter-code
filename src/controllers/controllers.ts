@@ -8,7 +8,7 @@ import {SearchBox,
         buildRelevanceSortCriterion,
         buildDateSortCriterion,
         SortOrder,
-        buildSort
+        buildSort,
       } from '@coveo/headless';
 
 import { headlessEngine } from '../Engine'
@@ -19,7 +19,9 @@ export const instantResults = buildInstantResults( headlessEngine,{options: {max
 
 export const resultList = buildResultList(headlessEngine);
 
-export const facet = buildFacet(headlessEngine, {options: {field: 'ec_category'}});
+export const categoryFacet = buildFacet(headlessEngine, {options: {field: 'ec_category'}});
+export const colorFacet = buildFacet(headlessEngine, {options: {field: 'cat_color'}});
+export const levelFacet = buildFacet(headlessEngine, {options: {field: 'cat_level'}});
 
 export const pager = buildPager(headlessEngine)
 
