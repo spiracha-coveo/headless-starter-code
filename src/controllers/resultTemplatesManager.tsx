@@ -2,8 +2,24 @@ import {
     ResultTemplatesManager,
     Result,
     buildResultTemplatesManager,
-  } from '@coveo/headless';
+    buildInteractiveResult
+ } from '@coveo/headless';
 import {headlessEngine} from '../Engine';
+
+
+const interactiveResult = (result: Result) => {
+    const interactiveResultController = buildInteractiveResult(headlessEngine, {
+        options: { result: result},
+      });
+      return (
+        <a
+          href='#'
+          onClick={() => interactiveResultController.select()}
+        >
+          {result.title}
+        </a>
+      );
+}
 
 export const resultTemplatesManager: ResultTemplatesManager<
     (result: Result) => JSX.Element> = buildResultTemplatesManager(headlessEngine);
@@ -14,7 +30,7 @@ export const resultTemplatesManager: ResultTemplatesManager<
             <li key={result.uniqueId}>
             <div>
                 <div className='result-item-header'>
-                    <h2>{result.title}</h2>
+                    {interactiveResult(result)}
                     <button className='result-button'>Add to cart</button>
                 </div>
                 <p>{result.excerpt}</p>
