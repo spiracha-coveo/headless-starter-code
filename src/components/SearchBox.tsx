@@ -1,12 +1,12 @@
 import {
-    SearchBox as HeadlessSearchBox,
-    InstantResults as HeadlessInstantResults,
+    SearchBox as SearchBoxController,
+    InstantResults as InstantResultsController,
   } from '@coveo/headless';
   import {useEffect, useState} from 'react';
    
 interface SearchBoxProps {
-  controllerSearchbox: HeadlessSearchBox;
-  controllerInstantResults: HeadlessInstantResults;
+  controllerSearchbox: SearchBoxController;
+  controllerInstantResults: InstantResultsController;
 }
    
 export const SearchBox: React.FC<SearchBoxProps> = (
