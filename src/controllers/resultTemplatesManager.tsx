@@ -33,23 +33,22 @@ const interactiveResult = (result: Result) => {
 
 export const resultTemplatesManager: ResultTemplatesManager<
     (result: Result) => JSX.Element> = buildResultTemplatesManager(headlessEngine);
-
-    resultTemplatesManager.registerTemplates({
-        conditions: [],
-        content: (result: Result) => (
-            <li key={result.uniqueId}>
-            <div>
-                <div className='result-item-header'>
-                    {interactiveResult(result)}
-                    <button 
-                      className='result-button' 
-                      onClick={() => sendAddToCartEvent(result)}
-                    >
-                        Add to cart
-                    </button>
-                </div>
-                <p>{result.excerpt}</p>
+resultTemplatesManager.registerTemplates({
+    conditions: [],
+    content: (result: Result) => (
+        <li key={result.uniqueId}>
+        <div>
+            <div className='result-item-header'>
+                {interactiveResult(result)}
+                <button 
+                  className='result-button' 
+                  onClick={() => sendAddToCartEvent(result)}
+                >
+                    Add to cart
+                </button>
             </div>
-            </li>
-        ),
+            <p>{result.excerpt}</p>
+        </div>
+        </li>
+    ),
 });
