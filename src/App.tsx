@@ -19,6 +19,11 @@ import {
    } from './controllers/controllers';
 import { resultTemplatesManager } from './controllers/resultTemplatesManager';
 import { headlessEngine } from './Engine';
+
+declare global {
+  function coveoua(action?: string, fieldName?: any, fieldValue?: any): any;
+}
+
 function App() {
 
   useEffect(()=> headlessEngine.executeFirstSearch()) // show results on initial page load
