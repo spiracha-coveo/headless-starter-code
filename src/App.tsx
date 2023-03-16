@@ -10,6 +10,7 @@ import {
   facet as FacetController,
   pager as PagerController,
    } from './controllers/controllers';
+import { resultTemplatesManager } from './controllers/resultTemplatesManager';
 import { headlessEngine } from './Engine';
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
             <Facet controller={FacetController} title="Category" />
           </div>
           <div className="results-section column">
-            <ResultList controller={ResultListController}/>
+            <ResultList controller={ResultListController} resultTemplatesManager={resultTemplatesManager}/>
             <Pager controller={PagerController}/>
           </div>
         </div>

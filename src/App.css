@@ -97,3 +97,51 @@ button {
   border-radius: 5px;
   cursor: pointer
 } 
+
+/* styling for pager component */
+
+/* styling for result list component */
+
+.result-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-button {
+  position: relative;
+  height: 40px;
+  width: 120px;
+  background-color: #00ADFF;
+  border: none;
+  font-size: 20px;
+  color: #FFFFFF;
+  padding: 0px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.result-button:after {
+  content: "";
+  background: #00ADFF;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.result-button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
