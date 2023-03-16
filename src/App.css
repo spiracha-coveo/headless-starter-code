@@ -13,10 +13,10 @@ button {
 .app-header {
   background-color: #24389E;
   display: flex;
-  gap:10px;
+  gap:30px;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  height: 100px;
 }
 
 .column {
@@ -28,13 +28,23 @@ button {
 /* search box component styling */
 
 .search-section {
-  width: 40%;
+  width: 25%;
+  align-self: flex-start;
+  position: relative;
+  top:30px
 }
 
-.search-box input {
-  width:150px;
+.search-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-box input{
+  flex:none;
+  width: 100%;
   padding:10px;
-  min-width: 80%;
+  box-sizing: border-box;
   border-radius:5px;
   border: none;
 }
@@ -42,6 +52,39 @@ button {
 .search-box input:focus {
   outline: none;      
   box-shadow: 0 0 0 2px;
+}
+
+.search-results {
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  /* background-color: cadetblue; */
+  z-index:1
+}
+.search-queries {
+  width: 100%;
+  border: #e2e0db 2px solid;
+  border-right :0;
+}
+
+.search-queries p {
+  margin: 0px;
+}
+
+.search-queries p:hover {
+  background-color: #FAF9F6;
+}
+
+.search-instant-results {
+  width: 100%;
+  font-size: 15px;
+  overflow: hidden;
+  border-bottom: #e2e0db 2px solid;
+  border-top: #e2e0db 2px solid;
+  border-left: #e2e0db 2px dotted;
+  border-right: #e2e0db 2px solid;
+  z-index:1
 }
 
 /* facet component styling */
