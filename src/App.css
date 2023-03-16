@@ -74,3 +74,26 @@ button {
 .results-section {
   width: 50%;
 }
+
+/* styling for pager component */
+
+.pager {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pager-arrow {
+  color: #24389E;
+}
+
+.pager-number:active, .pager-number:focus, .pager-number:disabled {
+  background-color: #8dcce8;
+  border-radius: 5px;
+  color: black;
+}
+
+.pager-number:hover, .pager-arrow:hover {
+  border: 2px solid  #8dcce8;
+  border-radius: 5px;
+  cursor: pointer
+} 
